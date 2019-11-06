@@ -1,0 +1,25 @@
+<!--詳細画面ページ-->
+
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+  詳細画面
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <p>タイトル：{{object.title}}</p>
+    <P>投稿者：{{object.author}}</P>
+    <p>内　容：{{object.content}}</p>
+    <p>投稿時刻：{{object.regist_date}}</p>
+    <a href="{% url 'good' object.pk %}"" class="btn btn-primary" role="button" aria-pressed="true">いいねする</a>
+    <a href="{% url 'list' %}" class="btn btn-success" role="button" aria-pressed="true">戻る</a>
+  </div>
+</div>
+{% endblock content %}

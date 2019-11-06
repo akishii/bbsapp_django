@@ -1,0 +1,25 @@
+<!--新規投稿ページ-->
+
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+  社内掲示板
+</div>
+{% endblock header %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+  <form action="" method="POST">{% csrf_token %}
+    <p>タイトル：<input type="text" name='title'></p>
+    <p>投稿内容：<textarea rows="7" cols="50" type="text" name='content''></textarea></p>
+    <input type="hidden" name='author' value='{{ user.username }}'>
+    <input type="submit" value="新規投稿">
+  </form>
+  {% else %}
+    ログインしてください
+  {% endif %}
+{% endblock content %}

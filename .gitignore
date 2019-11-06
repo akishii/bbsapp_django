@@ -1,0 +1,10 @@
+
+*.log
+*.pyc
+*.pyo
+__pycache__
+db.sqlite3
+portfolio/settings.py
+myvenv
+/static
+.DS_Store
